@@ -7,7 +7,7 @@ export class UsersRepository {
   constructor(private readonly prisma: PrismaService) {}
 
   async addUser(data: CreateUserDTO) {
-    await this.prisma.user.create({ data });
+    return await this.prisma.user.create({ data });
   }
 
   async findUserByEmail(email: string) {
